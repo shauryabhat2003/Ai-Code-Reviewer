@@ -1,6 +1,4 @@
-# AI Code Reviewer - https://ai-code-reviewer-io.onrender.com
-
-![Final Pixel Perfect Dashboard](./screen.png)
+# Review It - https://ai-code-reviewer-io.onrender.com
 
 ## Overview
 
