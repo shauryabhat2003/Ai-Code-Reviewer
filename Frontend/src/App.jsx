@@ -8,6 +8,9 @@ import "highlight.js/styles/github-dark.css";
 import axios from "axios";
 import "./App.css";
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
 function App() {
   const [count, setCount] = useState(0);
   const [code, setCode] = useState(` function sum() {
@@ -21,13 +24,19 @@ function App() {
   }, []);
 
   async function reviewCode() {
-    const response = await axios.post(
-      "https://ai-code-reviewer-backend-hzou.onrender.com/ai/get-review",
-      {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/ai/get-review`, {
         code,
-      }
-    );
-    setReview(response.data);
+      });
+      setReview(response.data);
+    } catch (error) {
+      const message =
+        error?.response?.data?.message ||
+        `Request failed. Check if backend is running on ${API_BASE_URL}`;
+      const details = error?.response?.data?.details;
+
+      setReview(`❌ ${message}${details ? `\n\n${details}` : ""}`);
+    }
   }
 
   return (
