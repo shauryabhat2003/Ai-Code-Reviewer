@@ -213,9 +213,9 @@ function App() {
                 )}
               </>
             ) : (
-              <div className="flex flex-col items-center justify-center h-full text-center space-y-4 opacity-50 mt-10">
+              <div className="flex flex-col items-center justify-center h-full text-center space-y-4 opacity-50">
                 <svg className="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                <p className="text-gray-500 font-medium max-w-[250px]">Ready to analyze your code. Paste your JavaScript snippet and click Review Code.</p>
+                <p className="text-gray-500 font-medium max-w-[250px]">Ready to analyze your code. Paste your code snippet and click Review Code.</p>
               </div>
             )}
           </div>
@@ -308,6 +308,9 @@ function App() {
           </div>
         </div>
       )}
+      <footer className="fixed bottom-4 left-0 w-full text-center text-[10px] font-semibold text-gray-400 tracking-widest uppercase z-10">
+        Copyrights reserved @shauryabhat2003
+      </footer>
     </>
   );
 }
